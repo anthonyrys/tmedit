@@ -24,7 +24,7 @@ class Sidebar:
         self.buttons = {}
         self.button_keys = ()
 
-        self.page = 12
+        self.page = 0
         self.page_text = None
 
         self.selected = None

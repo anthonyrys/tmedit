@@ -100,6 +100,8 @@ class Brush(Tool):
         dimensions = self.tmedit.tilemap.data['config']['tile']['dimensions']
 
         chunks = [c for c in self.tmedit.renderable_chunks if self.tmedit.tilemap.chunks[c][0].collidepoint(self.tmedit.mouse_position)]
+        if not chunks:
+            return
         
         if self.tmedit.modes['snapping']:
             position = ((dimensions[0] * round(self.tmedit.mouse_position.x / dimensions[0])), (dimensions[1] * round(self.tmedit.mouse_position.y / dimensions[1])))
